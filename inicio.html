@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio de sesión</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Inicio de sesión</h1>
+
+        <div class="tabs">
+            <button class="tab" id="vendedor-tab">Vendedor</button>
+            <button class="tab" id="comprador-tab">Comprador</button>
+        </div>
+
+        <div class="tab-content" id="vendedor-content">
+            <h2>Inicio de sesión de vendedor</h2>
+            <form id="vendedor-inicio-sesion-form" onsubmit="loginVendedor(event)">
+                <label for="vendedor-email-login">Correo electrónico:</label>
+                <input type="email" id="vendedor-email-login" name="email" required>
+
+                <label for="vendedor-password-login">Contraseña:</label>
+                <input type="password" id="vendedor-password-login" name="password" required>
+
+                <button type="submit">Iniciar sesión</button>
+            </form>
+            <div class="button-container">
+                <button onclick="location.href='registro-vendedor.html'">Crear cuenta de vendedor</button>
+            </div>
+        </div>
+
+        <div class="tab-content" id="comprador-content" style="display: none;">
+            <h2>Inicio de sesión de comprador</h2>
+            <form id="comprador-inicio-sesion-form" onsubmit="loginComprador(event)">
+                <label for="comprador-email-login">Correo electrónico:</label>
+                <input type="email" id="comprador-email-login" name="email" required>
+
+                <label for="comprador-password-login">Contraseña:</label>
+                <input type="password" id="comprador-password-login" name="password" required>
+
+                <button type="submit">Iniciar sesión</button>
+            </form>
+            <div class="button-container">
+                <button onclick="location.href='registro-comprador.html'">Crear cuenta de comprador</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

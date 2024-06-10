@@ -1,0 +1,35 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f8f8;
+}
+
+.highlight img {
+    width: 100%;
+    max-height: 300px;
+    object-fit: cover;
+}
+
+.highlight h2 {
+    margin: 10px 0;
+}
+
+.product-list .product-item {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 10px;
+    padding: 10px;
+    background-color: #fff;
+    text-align: center;
+}
+
+.product-item h3 {
+    margin: 0;
+    margin-bottom: 10px;
+    font-size: 1.2em;
+    color: #333;
+}
+
+.product-item p {
+    margin: 5px 0;
+    color: #666;
+}
