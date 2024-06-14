@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Artesanias</title>
+  <link rel="icon" type="image/png" href="../artesania/assets/img/productos/logo.png">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> 
+  <style>
+    /* Remove the navbar's default margin-bottom and rounded borders */ 
+    .navbar {
+      margin-bottom: 0;
+      border-radius: 0;
+    }
+    
+    /* Add a gray background color and some padding to the footer */
+    footer {
+      background-color: #f2f2f2;
+      padding: 25px;
+    }
+    
+  .carousel-inner img {
+      width: 100%; /* Set width to 100% */
+      margin: auto;
+      min-height:200px;
+  }
+
+  .carousel-caption h3 {
+  font-size: 40px;
+  }
+  /* Hide the carousel text when the screen is less than 600 pixels wide */
+  @media (max-width: 600px) {
+    .carousel-caption {
+      display: none; 
+    }
+  }
+  </style>
+</head>
+<body>
+
+<nav class="navbar navbar-dark">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>                        
+        </button>
+        <a class="navbar-brand" href="#">
+        </a>
+      </div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav">
+          <img src="../artesania/assets/img/productos/atesanum.png" class="img-responsive" alt="Logo de la empresa" >
+          <li class="active"><a href="principal.html">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Projects</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+        <form class="navbar-form navbar-right">
+            <div class="input-group">
+              <input type="text" class="form-control" placeholder="Buscar...">
+              <span class="input-group-btn">
+                <button class="btn btn-default" type="submit">
+                  <span class="glyphicon glyphicon-search"></span>
+                </button>
+              </span>
+            </div>
+          </form>
+          <ul class="nav navbar-nav navbar-right">
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                <span class="glyphicon glyphicon-user"></span>
+                Acceder
+              </a>
+              <ul class="dropdown-menu">
+                <li><a href="vendedor.html">Vendedor</a></li>
+                <li><a href="comprador.html">Comprador</a></li>
+              </ul>
+            </li>
+          </ul>
+    </div>
+</nav>
+
+    <header class="navbar navbar-collapse">
+        <div class="container">
+            <a class="navbar-brand" href="#">Comuniquese con nosotros</a>
+        </div>
+    </header>
+
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-6">
+                <img src="../artesania/assets/img/productos/contacto.jpg" class="img-responsive" alt="Proceso de ingreso" 
+                    style="width: 100%;" class="img-fluid">
+            </div>
+            <div class="col-md-6">
+                <form class="needs-validation" novalidate>
+                    <div class="mb-3">
+                        <label for="nombre" class="form-label">Nombre</label>
+                        <input type="text" class="form-control" id="nombre" placeholder="Ingrese su nombre"
+                            required>
+                        <div class="invalid-feedback">
+                            Por favor ingrese un nombre.
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Correo electrónico</label>
+                        <input type="email" class="form-control" id="email" placeholder="Ingrese su correo electrónico"
+                            required>
+                        <div class="invalid-feedback">
+                            Por favor ingrese un correo electrónico válido.
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="telefono" class="form-label">Teléfono</label>
+                        <input type="email" class="form-control" id="telefono" placeholder="Ingrese su telefono">
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="comentario" class="form-label">Comentario</label>
+                        <textarea class="form-control" id="comentario" placeholder="Ingrese su comentario"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-outline-primary">Enviar</button>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-primary text-light text-center py-3 fixed-bottom">
+        <div class="container">
+            &copy; 2024 Artesanum. Todos los derechos reservados.
+        </div>
+    </footer>
+    <script src="assets/js/validacion.js">
+    </script>
+</body>
+
+</html>
