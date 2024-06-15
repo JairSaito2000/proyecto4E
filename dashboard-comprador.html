@@ -1,49 +1,264 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Panel de Comprador</title>
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="style2.css">
+<head>          
+  <title>Artesanum</title>
+  <link rel="icon" type="image/png" href="../artesania/assets/img/productos/logo.png">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="style2.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> 
+  <style>
+    /* Remove the navbar's default margin-bottom and rounded borders */ 
+    .navbar {
+      margin-bottom: 0;
+      border-radius: 0;
+    }
+    
+    /* Add a gray background color and some padding to the footer */
+    footer {
+      background-color: #f2f2f2;
+      padding: 25px;
+    }
+    
+  .carousel-inner img {
+      width: 100%; /* Set width to 100% */
+      margin: auto;
+      min-height:200px;
+  }
+
+  .carousel-caption h3 {
+  font-size: 40px;
+  }
+  /* Hide the carousel text when the screen is less than 600 pixels wide */
+  @media (max-width: 600px) {
+    .carousel-caption {
+      display: none; 
+    }
+  }
+  </style>
 </head>
 <body>
+
+  <nav class="navbar navbar-dark">
     <div class="container-fluid">
-        <div class="row bg-primary text-white p-3">
-            <div class="col text-center">
-                <h1>Artesanum</h1>
-            </div>
-        </div>
-        <div class="row bg-light py-3">
-            <div class="col-md-4 offset-md-4">
-                <div class="input-group">
-                    <input type="text" id="search-name" class="form-control" placeholder="Introducir búsqueda">
-                    <div class="input-group-append">
-                        <button class="btn btn-primary" onclick="searchProducts()">Buscar</button>
-                    </div>
-                </div>
-            </div>
-        </div>
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>                        
+        </button>
+        <a class="navbar-brand" href="#">
+        </a>
+      </div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav">
+          <img src="../artesania/assets/img/productos/atesanum.png" class="img-responsive" alt="Logo de la empresa" >
+          <li class="active"><a href="principal.html">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Projects</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <form class="navbar-form navbar-right">
+          <div class="input-group">
+            <input type="text" class="form-control" placeholder="Buscar...">
+            <span class="input-group-btn">
+              <button class="btn btn-default" type="submit">
+                <span class="glyphicon glyphicon-search"></span>
+              </button>
+            </span>
+          </div>
+        </form>
+        <ul class="nav navbar-nav navbar-right">
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              <span class="glyphicon glyphicon-user"></span>
+              Acceder
+            </a>
+            <ul class="dropdown-menu">
+              <li><a href="vendedor.html">Ingresar como Vendedor</a></li>
+              <li><a href="comprador.html">Cerrar Sesión</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+    <div class="container-fluid">
         <div class="row">
             <div class="col-md-2 bg-white">
                 <h4 class="mt-3">Categorías</h4>
                 <ul class="list-group list-group-flush">
-                    <li class="list-group-item"><a href="#">Arte</a></li>
-                    <li class="list-group-item"><a href="#">Adornos de Navidad</a></li>
+                    <li class="list-group-item"><a href="#">Artesanias</a></li>
+                    <li class="list-group-item"><a href="#">Sombreros</a></li>
                     <li class="list-group-item"><a href="#">Alfombras y tapices</a></li>
-                    <li class="list-group-item"><a href="#">Bebés y niños</a></li>
+                    <li class="list-group-item"><a href="#">barro y cerámicas</a></li>
                     <li class="list-group-item"><a href="#">Bolsos</a></li>
+                    <li class="list-group-item"><a href="#">Ponchos</a></li>
+                    <li class="list-group-item"><a href="#">accesorios</a></li>
+
                     <!-- Agregar más categorías según sea necesario -->
                 </ul>
             </div>
             <div class="col-md-10">
                 <div class="highlight text-center mt-3">
                     <img src="https://cantabriaharleydavidson.com/wp-content/uploads/2020/02/20171228-banner-rebajas-es.gif" alt="Rebajas" class="img-fluid">
-                    <h2 class="my-3">Diseños exclusivos con rebajas de hasta el 70%</h2>
-                    <button class="btn btn-primary">Ver descuentos</button>
                 </div>
                 <h2 class="mt-4">Artesanías destacadas</h2>
-                <div id="product-list" class="row">
+                <style>
+                    body {
+                        font-family: Times New Roman, sans-serif;
+                        margin: 0;
+                        padding: 20px;
+                    }
+            
+                    .contenedor-productos {
+                        display: flex;
+                        flex-wrap: wrap;
+                        justify-content: space-between;
+                    }
+            
+                    .producto {
+                        width: 25%;
+                        margin-bottom: 20px;
+                        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                    }
+            
+                    .producto img {
+                        width: 100%;
+                        height: 200px;
+                        object-fit: cover;
+                    }
+            
+                    .producto h3 {
+                        text-align: center;
+                        margin-top: 10px;
+                    }
+            
+                    .producto p {
+                        text-align: center;
+                        margin-bottom: 10px;
+                    }
+                </style>
+            </head>
+            <body>
+            
+            <div class="contenedor-productos">
+            
+                <div class="producto"> 
+                    <img src="../artesania/assets/img/productos/chompa.jpg" alt="Producto 1">
+                    <h3>Chompa de Cuero
+                        A-2</h3>
+                    <p>Categoría: Cuero</p>
+                    <p>Precio: $150</p>
+                    <button class="btn btn-primary text-center">Comprar</button>
+                    <button class="btn btn-success text-center">Añadir al carrito</button>
+                </div>
+            
+                <div class="producto">
+                    <img src="../artesania/assets/img/productos/sombrero2.jpg" alt="Producto 2">
+                    <h3>El sombrero de paja</h3>
+                    <p>Categoría: Sombrero de paja </p>
+                    <p>Precio: $150</p>
+                    <button class="btn btn-primary text-center">Comprar</button>
+                    <button class="btn btn-success text-center">Añadir al carrito</button>
+                </div>
+            
+                <div class="producto">
+                    <img src="../artesania/assets/img/productos/jarro.jpg" alt="Producto 3">
+                    <h3>Barro y cerámica</h3>
+                    <p>Categoría: Barro </p>
+                    <p>Precio: $150</p>
+                    <button class="btn btn-primary text-center">Comprar</button>
+                    <button class="btn btn-success text-center">Añadir al carrito</button>
+                </div>
+
+                <div class="producto">
+                    <img src="../artesania/assets/img/productos/bolso.jpg" alt="Producto 4">
+                    <h3>Bolso Amazonas </h3>
+                    <p>Categoría: Bolso </p>
+                    <p>Precio: $65</p>
+                    <button class="btn btn-primary text-center">Comprar</button>
+                    <button class="btn btn-success text-center">Añadir al carrito</button>
+                </div>
+
+                <div class="producto">
+                    <img src="../artesania/assets/img/productos/shigra.jpg" alt="Producto 5">
+                    <h3>Shigra Pile</h3>
+                    <p>Categoría: Bolso </p>
+                    <p>Precio: $75</p>
+                    <button class="btn btn-primary text-center">Comprar</button>
+                    <button class="btn btn-success text-center">Añadir al carrito</button>
+                </div>
+
+                <div class="producto">
+                    <img src="../artesania/assets/img/productos/poncho.jpg" alt="Producto 6">
+                    <h3>Poncho de Macana Gala</h3>
+                    <p>Categoría: Poncho </p>
+                    <p>Precio: $85</p>
+                    <button class="btn btn-primary text-center">Comprar</button>
+                    <button class="btn btn-success text-center">Añadir al carrito</button>
+                </div>
+
+                <div class="producto">
+                    <img src="../artesania/assets/img/productos/poncho2.jpg" alt="Producto 7">
+                    <h3>Poncho Tolita Beige</h3>
+                    <p>Categoría: Poncho </p>
+                    <p>Precio: $85</p>
+                    <button class="btn btn-primary text-center">Comprar</button>
+                    <button class="btn btn-success text-center">Añadir al carrito</button>
+                </div>
+
+                <div class="producto">
+                    <img src="../artesania/assets/img/productos/collar2.jpg" alt="Producto 8">
+                    <h3>Indígena Hualca 12 </h3>
+                    <p>Categoría: Collar </p>
+                    <p>Precio: $405</p>
+                    <button class="btn btn-primary text-center">Comprar</button>
+                    <button class="btn btn-success text-center">Añadir al carrito</button>
+                </div>
+
+                <div class="producto">
+                    <img src="../artesania/assets/img/productos/saraguro.jpg" alt="Producto 9">
+                    <h3>Collar Saraguro Azul </h3>
+                    <p>Categoría: Collar </p>
+                    <p>Precio: $105</p>
+                    <button class="btn btn-primary text-center">Comprar</button>
+                    <button class="btn btn-success text-center">Añadir al carrito</button>
+                </div>
+
+                <div class="producto">
+                    <img src="../artesania/assets/img/productos/Collar3.jpg" alt="Producto 10">
+                    <h3>Collar Colibríes </h3>
+                    <p>Categoría: Collar </p>
+                    <p>Precio: $280</p>
+                    <button class="btn btn-primary text-center">Comprar</button>
+                    <button class="btn btn-success text-center">Añadir al carrito</button>
+                </div>
+
+                <div class="producto">
+                    <img src="../artesania/assets/img/productos/cobija.jpg" alt="Producto 11">
+                    <h3>Cobija Yambo</h3>
+                    <p>Categoría: Cobija </p>
+                    <p>Precio: $290</p>
+                    <button class="btn btn-primary text-center">Comprar</button>
+                    <button class="btn btn-success text-center">Añadir al carrito</button>
+                </div>
+
+                <div class="producto">
+                    <img src="../artesania/assets/img/productos/servilletas.jpg" alt="Producto 12">
+                    <h3>Hand Embroidered</h3>
+                    <p>Categoría: Para mesa  </p>
+                    <p>Precio: $49</p>
+                    <button class="btn btn-primary text-center">Comprar</button>
+                    <button class="btn btn-success text-center">Añadir al carrito</button>
+                </div>
+
+            </div>
+
                     <!-- Lista de productos -->
                 </div>
             </div>
@@ -54,5 +269,13 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="script2.js"></script>
+
+    <footer class="bg-primary text-light text-center py-3 fixed-bottom">
+        <div class="container">
+            &copy; 2024 Artesanum. Todos los derechos reservados.
+        </div>
+    </footer>
+    <script src="assets/js/validacion.js">
+    </script>
 </body>
 </html>

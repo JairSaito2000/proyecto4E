@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registro de Vendedor</title>
+    <title>Vendedor</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
-        <h1>Registro de Vendedor</h1>
+        <h1>Registrarse como Vendedor</h1>
         <form id="vendedor-registro-form">
             <label for="vendedor-nombre">Nombre:</label>
             <input type="text" id="vendedor-nombre" name="nombre" required>
@@ -22,11 +22,9 @@
             <label for="vendedor-tienda">Nombre de la tienda:</label>
             <input type="text" id="vendedor-tienda" name="tienda" required>
 
-            <button type="submit">Registrarse</button>
+            <button href="principal.html" type="submit" onclick="location.href='dashboard-vendedor.html'">Registrarse </button>
         </form>
-        <div class="button-container">
-            <button onclick="location.href='inicio.html'">Volver al inicio de sesión</button>
-        </div>
     </div>
+    
 </body>
 </html>
